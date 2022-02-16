@@ -69,6 +69,11 @@
     border-style: solid;
     display: inline-block;
     border-radius: 12%;
+    color: whitesmoke;
+}
+
+.sobremidesc{
+    color: aqua;
 }
 
 .card{
@@ -77,7 +82,7 @@
 }
 
 .presentacion{
-    background-image: url(5125962.jpg);
+    background-image: url(.\assets\img\5125962.jpg);
    padding: 14pt;
     border: #02999E;
     border-style: double;
@@ -104,13 +109,13 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 14pt;
     font-style: oblique;
-    color: rgb(0, 0, 0);  
+    color: rgb(255, 255, 255);  
 }
 
 .card-text{
     font-family: Arial;
-    font-size: 10pt;   
-    color: orangered;
+    font-size: 12pt;   
+    color: rgb(255, 255, 255);
 }
 
 
@@ -137,6 +142,14 @@
     border-right: 20px;
 }
 
+.fa-edit{
+    color: rgb(253, 142, 52);
+    
+}
+
+.fa-times{
+    color: rgb(253, 142, 52);
+}
 
 .btn-edit{
     color: black;

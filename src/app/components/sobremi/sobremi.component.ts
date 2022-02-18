@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sobremi.component.css']
 })
 export class SobremiComponent implements OnInit {
+  
 
   constructor() { }
 

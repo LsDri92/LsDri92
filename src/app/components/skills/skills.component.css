@@ -1,0 +1,16 @@
+.logoimg {
+    padding: 20px;
+    margin-top: 10px;
+    align-items: center;
+}
+
+ul li {
+    list-style: none;
+}
+
+p {
+    font-size: medium;
+    color: darkmagenta;
+    padding: 20px;
+}
+

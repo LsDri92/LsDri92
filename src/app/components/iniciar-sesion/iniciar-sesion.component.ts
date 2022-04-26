@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, MinLengthValidator, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-iniciar-sesion',
@@ -37,4 +38,6 @@ export class IniciarSesionComponent implements OnInit {
   get Password(){
     return this.form.get('password');
   }
+
+  
 }

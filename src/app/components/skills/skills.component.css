@@ -14,3 +14,10 @@ p {
     padding: 20px;
 }
 
+img title {
+    border: 20cm;
+    border-color: red;
+    font-size: 15pt;
+    color: blueviolet;
+}
+

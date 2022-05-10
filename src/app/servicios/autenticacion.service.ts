@@ -8,20 +8,24 @@ import { map } from 'rxjs/operators';
 })
 
 export class AutenticacionService {
-  url='https://floating-hollows-77784.herokuapp.com/';
+  url = 'https://floating-hollows-77784.herokuapp.com/';
   currentUserSubject: BehaviorSubject<any>;
 
 
-  constructor(private http:HttpClient) { 
+  constructor(private http: HttpClient) {
     console.log("el servicio de autenticación esta corriendo")
-    this.currentUserSubject= new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser')||'{}'));
+    this.currentUserSubject = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'));
   }
 
-  IniciarSesion(credenciales:any):Observable<any>
-  {
-    return this.http.post(this.url, credenciales).pipe(map(data=> {
+  IniciarSesion(credenciales: any): Observable<any> {
+    return this.http.post(this.url, credenciales).pipe(map(data => {
       sessionStorage.setItem('currentUser', JSON.stringify(data));
+      this.currentUserSubject.next(data);
       return data;
     }))
+  }
+
+  get UsuarioAutenticado() {
+    return this.currentUserSubject.value;
   }
 }

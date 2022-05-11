@@ -5,6 +5,7 @@
     "@angular/cli": "13.3.5",
     "@angular/common": "13.3.6",
     "@angular/core": "13.3.6",
-    "angular": "1.8.3"
+    "angular": "1.8.3",
+    "format": "0.2.2"
   }
 }

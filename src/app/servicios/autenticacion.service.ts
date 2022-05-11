@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 
 export class AutenticacionService {
-  url = 'https://floating-hollows-77784.herokuapp.com/';
+  url = 'https://floating-hollows-77784.herokuapp.com/api';
   currentUserSubject: BehaviorSubject<any>;
 
 

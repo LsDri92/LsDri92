@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class PortfolioService {
-  url: string = "https://floating-hollows-77784.herokuapp.com/";
+  url: string = "http://floating-hollows-77784.herokuapp.com/api/";
 
   constructor(private http: HttpClient) { }
 

@@ -8,7 +8,7 @@ import { map } from 'rxjs/operators';
 })
 
 export class AutenticacionService {
-  url = 'http://floating-hollows-77784.herokuapp.com/api/';
+  url = 'https://floating-hollows-77784.herokuapp.com/api/';
   currentUserSubject: BehaviorSubject<any>;
 
 
@@ -18,7 +18,6 @@ export class AutenticacionService {
   }
 
   IniciarSesion(credenciales: any): Observable<any> {
-    console.log(credenciales)
     return this.http.post(this.url, credenciales).pipe(map(data => {
       sessionStorage.setItem('currentUser', JSON.stringify(data));
       this.currentUserSubject.next(data);

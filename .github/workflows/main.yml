@@ -1,16 +1,36 @@
 name: main
+on: [push]
 
-
-on:
-  push:
-    branches: [master]
-  pull_request:
-    branches: [master]
 jobs:
+  build-and-test-node10:
+    runs-on: ubuntu-latest
+    name: Node10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '10'
+      - uses: bahmutov/npm-install@v1
+      - run: npm run build
+      - run: npm test
 
- build:
-    release:
+  build-and-test-node12:
+    runs-on: ubuntu-latest
+    name: Node12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '12'
+      - uses: bahmutov/npm-install@v1
+      - run: npm run format
+      - run: npm run build
+      - run: npm test
+      - run: npm run check:markdown
 
+  release:
     runs-on: ubuntu-latest
     name: release
     needs: [build-and-test-node10, build-and-test-node12]

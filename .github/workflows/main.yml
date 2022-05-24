@@ -2,9 +2,8 @@ name: main
 on: [push]
 
 jobs:
-  
-  release:
-  
+    release:
+
     runs-on: ubuntu-latest
     name: release
     needs: [build-and-test-node10, build-and-test-node12]

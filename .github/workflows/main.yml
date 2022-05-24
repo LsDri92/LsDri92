@@ -2,15 +2,15 @@ name: main
 on: [push]
 
 jobs:
-  build-and-test-node10:
+  build-and-test-node16:
     runs-on: ubuntu-latest
-    name: Node10
+    name: Node16
     steps:
       - name: Checkout
         uses: actions/checkout@v1
       - uses: actions/setup-node@v1
         with:
-          node-version: '10'
+          node-version: '16'
       - uses: bahmutov/npm-install@v1
       - run: npm run build
       - run: npm test
@@ -19,7 +19,7 @@ jobs:
   release:
     runs-on: ubuntu-latest
     name: release
-    needs: [build-and-test-node10]
+    needs: [build-and-test-node16]
     # only release from the master branch
     if: github.ref == 'refs/heads/master'
     steps:
